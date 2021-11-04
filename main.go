@@ -1,36 +1,31 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/urfave/cli"
+	"github.com/arcAman07/Go-Tasks/actions"
 )
 
-func main() {
-	app := cli.NewApp()
+// Designing cli apps
+var app = 
 
-	app.Flags = []cli.Flag{
-		cli.StringFlag{
-			Name:  "lang",
-			Value: "english",
-			Usage: "language for the greeting",
+func main() {
+	app.Name = "Go-Tasks"
+
+	app.Commands = []cli.Command{
+		{
+			Name: "noop",
+		},
+		{
+			Name:     "add",
+			Category: "template",
+		},
+		{
+			Name:     "remove",
+			Category: "template",
 		},
 	}
 
-	app.Action = func(c *cli.Context) error {
-		name := "Nefertiti"
-		if c.NArg() > 0 {
-			name = c.Args().Get(0)
-		}
-		if c.String("lang") == "spanish" {
-			fmt.Println("Hola", name)
-		} else {
-			fmt.Println("Hello", name)
-		}
-		return nil
-	}
-
 	app.Run(os.Args)
-
 }
