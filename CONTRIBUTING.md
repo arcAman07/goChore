@@ -8,7 +8,7 @@
 
 This is how you can contribute to this package :
 
-1. Fork the project. `https://github.com/arcAman07/git-quick-pusher.git`
+1. Fork the project. `https://github.com/arcAman07/Go-Tasks.git`
 
 2. Create your feature branch. `git checkout -b feature/NewFeature`
 
