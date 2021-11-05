@@ -1,4 +1,4 @@
-package actions
+package commands
 
 import (
 	"fmt"
@@ -8,11 +8,16 @@ import (
 
 var app = cli.NewApp()
 
-func createUser() {
-
-	fmt.Println("New User created")
-}
-
-func loginUser() {
-	fmt.Println("User logged in")
+func commands() {
+	app.Commands = []cli.Command{
+		{
+			Name:    "register",
+			Aliases: []string{"r"},
+			Usage:   "Register a new user",
+			Action: func(c *cli.Context) error {
+				fmt.Println("Registering a new user")
+				return nil
+			},
+		},
+	}
 }
