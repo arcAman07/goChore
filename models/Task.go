@@ -1,11 +1,9 @@
 package models
 import (
 	"time"
-	"fmt"
 )
 var currentTime time.Time = time.Now()
-var date string = currentTime.Format("2006-01-02")
-fmt.Println(date)
+var Date string = currentTime.Format("01-02-2006")
 type Task struct {
 	ID        string `json:"id,omitempty" bson:"id,omitempty"`
 	TaskName string `json:"taskName,omitempty" bson:"taskName,omitempty"`
