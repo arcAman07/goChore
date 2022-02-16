@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"Go-Tasks/models"
 )
 
 var app = actions.App
