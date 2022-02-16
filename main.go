@@ -19,7 +19,7 @@ var TaskCollection *mongo.Collection
 // }
 
 func main() {
-	username := os.Args[0]
-	password := os.Args[1]
+	username := os.Args[2]
+	password := os.Args[3]
 	fmt.Println(username, password)
 }
