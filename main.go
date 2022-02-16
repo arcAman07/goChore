@@ -12,7 +12,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var app = actions.App
 var UserCollection *mongo.Collection
 var TaskCollection *mongo.Collection
 // func init() {
