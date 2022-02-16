@@ -9,8 +9,8 @@ func LogoutUser() (string, string) {
 	command := os.Args[1]
 	username := os.Args[2]
 	password := os.Args[3]
-	if command == "register" {
-		fmt.Println("Registering user")
+	if command == "logout" {
+		fmt.Println("Logging out user")
 		return username, password
 	}
 	return "", ""
