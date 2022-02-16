@@ -2,7 +2,7 @@ package main
 
 // Designing cli apps
 import (
-	"Go-Tasks/actions"
+	"goChore/actions"
 	"fmt"
 	"log"
 	"os"

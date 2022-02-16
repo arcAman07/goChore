@@ -1,4 +1,4 @@
-module Go-Tasks
+module goChore
 
 go 1.17
 
