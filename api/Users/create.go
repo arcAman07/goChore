@@ -8,20 +8,36 @@ import (
 )
 func Insert(coll *mongo.Collection) {
 	// Insert a single document
+	hash, err := bcrypt.GenerateFromPassword([]byte("1234567"), bcrypt.DefaultCost)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 	p1 := models.User{
 		Username: "arcAman07",
 		Password: "12345",
-		HashedPassword:bcrypt.GenerateFromPassword([]byte("12345"), bcrypt.DefaultCost)
+		HashedPassword:(string)(hash),
+	}
+	hash, err = bcrypt.GenerateFromPassword([]byte("1234567"), bcrypt.DefaultCost)
+	if err != nil {
+		fmt.Println(err)
+		return
 	}
 	p2 := models.User{
 		Username: "john05",
 		Password: "123456",
-		HashedPassword: bcrypt.GenerateFromPassword([]byte("123456"), bcrypt.DefaultCost)
+		HashedPassword: (string)(hash),
+	}
+	hash, err = bcrypt.GenerateFromPassword([]byte("1234567"), bcrypt.DefaultCost)
+	if err != nil {
+		fmt.Println(err)
+		return
 	}
 	p3 := models.User{
 		Username: "janeb4",
 		Password: "1234567",
-		HashedPassword: bcrypt.GenerateFromPassword([]byte("1234567"), bcrypt.DefaultCost)
+		HashedPassword: (string)(hash),
+	
 	}
 	// Insert multiple documents
 	multiUsers := []interface{}{p1, p2, p3}

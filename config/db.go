@@ -29,7 +29,7 @@ func Configure() (*mongo.Collection,*mongo.Collection) {
 		panic(err)
 	}
 	fmt.Println("Successfully connected and pinged.")
-	coll1 := client.Database("taskDB").Collection("users")
-	coll2 := client.Database("taskDB").Collection("tasks")
-	return coll1, coll2
+	UserCollection := client.Database("taskDB").Collection("users")
+	TaskCollection := client.Database("taskDB").Collection("tasks")
+	return UserCollection, TaskCollection
 }
