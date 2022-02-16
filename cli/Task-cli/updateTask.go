@@ -4,7 +4,7 @@ import (
 	"os"
 )
 
-func LoginUser() (string, string) {
+func UpdateTask() (string, string) {
 	command := os.Args[1]
 	username := os.Args[2]
 	password := os.Args[3]
