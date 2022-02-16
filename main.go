@@ -6,18 +6,20 @@ import (
 	"fmt"
 	"log"
 	"os"
-	// "goChore/api/Users"
-	// "goChore/config"
+	"goChore/api/Users"
+	"goChore/api/Tasks"
+	"goChore/config"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
 var app = actions.App
 var UserCollection *mongo.Collection
 var TaskCollection *mongo.Collection
-// func init() {
-// 	UserCollection,TaskCollection = config.Configure()
-// 	Users.Insert(UserCollection)
-// }
+func init() {
+	UserCollection,TaskCollection = config.Configure()
+	Users.Insert(UserCollection)
+	Tasks.Insert(TaskCollection)
+}
 
 func main() {
 	fmt.Println("Hello World")
