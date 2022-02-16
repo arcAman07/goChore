@@ -2,9 +2,7 @@ package main
 
 // Designing cli apps
 import (
-	"goChore/actions"
-	// "fmt"
-	"log"
+	"fmt"
 	"os"
 	// "goChore/api/Users"
 	// "goChore/api/Tasks"
@@ -21,10 +19,7 @@ var TaskCollection *mongo.Collection
 // }
 
 func main() {
-	actions.Actions()
-	err := app.Run(os.Args)
-	if err != nil {
-		log.Fatal(err)
-	}
-
+	username := os.Args[0]
+	password := os.Args[1]
+	fmt.Println(username, password)
 }
