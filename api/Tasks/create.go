@@ -13,17 +13,17 @@ func Insert(coll *mongo.Collection) {
 	p1 := models.Task{
 		TaskName:"study physics",
 		Date:currentDay,
-		Status:false,
+		Status:"false",
 	}
 	p2 := models.Task{
 		TaskName:"code in golang",
 		Date:currentDay,
-		Status:false,
+		Status:"false",
 	}
 	p3 := models.Task{
 		TaskName:"Eating Food",
 		Date:currentDay,
-		Status:true,
+		Status:"true",
 	}
 	// Insert multiple documents
 	multiTasks := []interface{}{p1, p2, p3}
