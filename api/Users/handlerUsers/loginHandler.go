@@ -15,7 +15,8 @@ func LoginHandler(coll *mongo.Collection, username string, password string, stat
 	cursor,err := coll.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println(err)
-		fmt.Println("Error in finding user")
+		fmt.Println("Username does not exist")
+		fmt.Println("Please register")
 		return
 	}
 	// Iterate through the cursor
@@ -31,6 +32,7 @@ func LoginHandler(coll *mongo.Collection, username string, password string, stat
 		err = bcrypt.CompareHashAndPassword([]byte(Password), []byte(EnteredPassword))
 		if err != nil {
 			fmt.Println("Incorrect password")
+			fmt.Println("Please try again")
 			return
 		}
 		user.LoggedIn = LoggedIn

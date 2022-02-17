@@ -43,7 +43,6 @@ func RegisterHandler(coll *mongo.Collection, username string, password string, s
 	if err != nil {
 		checkUsername = 0
 		registeredUser = 0
-		return
 	} else {
 		for cursor.Next(context.TODO()) {
 			var user models.User
