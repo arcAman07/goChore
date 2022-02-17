@@ -5,14 +5,10 @@ import (
 	"goChore/cli/UserCli"
 )
 
-func RefreshTask() (string, string) {
+func RefreshTask() {
 	command := os.Args[1]
-	username := os.Args[2]
-	password := os.Args[3]
 	status := UserCli.LoggedIn
-	if command == "login" && status == 1 {
-		fmt.Println("Logging in user")
-		return username, password
+	if command == "refresh" && status == 1 {
+		fmt.Println("Refreshing all tasks...")
 	}
-	return "", ""
 }

@@ -5,14 +5,14 @@ import (
 	"goChore/cli/UserCli"
 )
 
-func DeleteTask() (string, string) {
+func DeleteTask() (string) {
 	command := os.Args[1]
-	username := os.Args[2]
-	password := os.Args[3]
+	taskName := os.Args[2]
 	status := UserCli.LoggedIn
-	if command == "login" && status == 1 {
-		fmt.Println("Logging in user")
-		return username, password
+	if command == "delete" && status == 1 {
+		fmt.Println("Deleting task")
+		return taskName
 	}
-	return "", ""
+	fmt.Println("Not logged in")
+	return ""
 }
