@@ -26,6 +26,7 @@ func RegisterHandler(coll *mongo.Collection, username string, password string, s
 
 	if len(password) < 8 {
 		fmt.Println("Password must be atleast 8 characters long")
+		return
 	}
 
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(Password), bcrypt.DefaultCost)

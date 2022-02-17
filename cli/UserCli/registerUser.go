@@ -16,12 +16,12 @@ func RegisterUser(coll *mongo.Collection) {
 	username := os.Args[2]
 	password := os.Args[3]
 	fmt.Println(command,username,password)
+	if command == "register" && LoggedIn == 1 {
+		fmt.Println("User is already logged in")
+	}
 	if command == "register" && LoggedIn == 0{
 		LoggedIn = 1
 		fmt.Println("Registering user ...")
 		handlerUsers.RegisterHandler(coll, username, password, LoggedIn)
-	}
-	if command == "register" && LoggedIn == 1 {
-		fmt.Println("User is already logged in")
 	}
 }

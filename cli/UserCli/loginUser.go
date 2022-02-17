@@ -14,12 +14,12 @@ func LoginUser(coll *mongo.Collection) {
 	command := os.Args[1]
 	username := os.Args[2]
 	password := os.Args[3]
+	if command == "login" && LoggedIn == 1 {
+		fmt.Println("User is already logged in")
+	}
 	if command == "login" && LoggedIn == 0 {
 		LoggedIn = 1
 		fmt.Println("Logging in user ...")
 		handlerUsers.LoginHandler(coll, username, password, LoggedIn)
-	}
-	if command == "login" && LoggedIn == 1 {
-		fmt.Println("User is already logged in")
 	}
 }
