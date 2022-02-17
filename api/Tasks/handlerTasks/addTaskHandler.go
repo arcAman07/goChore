@@ -6,4 +6,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"goChore/models"
 )
-func AddTaskHandler()
+func AddTaskHandler(username string, task string) {
+	
+}
