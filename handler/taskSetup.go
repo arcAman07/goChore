@@ -7,29 +7,25 @@ import (
 )
 
 func TaskSetup(user *mongo.Collection, task *mongo.Collection) {
-	TaskCli.AddTask(user, task)
-	TaskCli.DeleteTask(user, task)
-	TaskCli.FinishTask(user, task)
-	TaskCli.RemainTask(user, task)
-	TaskCli.RefreshTask(user, task)
-	TaskCli.UpdateTask(user, task)
-	TaskCli.ListTask(user, task)
 	if os.Args[1] == "add" {
-		UserCli.RegisterUser(user)
+		TaskCli.AddTask(user, task)
 	}
 	if os.Args[1] == "delete" {
-		UserCli.LoginUser(user)
+		TaskCli.DeleteTask(user, task)
 	}
 	if os.Args[1] == "finish" {
-		UserCli.LogoutUser(user)
+		TaskCli.FinishTask(user, task)
 	}
 	if os.Args[1] == "remain" {
-		UserCli.RegisterUser(user)
+		TaskCli.RemainTask(user, task)
 	}
 	if os.Args[1] == "update" {
-		UserCli.LoginUser(user)
+		TaskCli.UpdateTask(user, task)
 	}
 	if os.Args[1] == "list" {
-		UserCli.LogoutUser(user)
+		TaskCli.ListTask(user, task)
+	}
+	if os.Args[1] == "refresh" {
+		TaskCli.RefreshTask(user, task)
 	}
 }
