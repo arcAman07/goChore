@@ -8,4 +8,4 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func ListTaskHandler()
+func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username string)

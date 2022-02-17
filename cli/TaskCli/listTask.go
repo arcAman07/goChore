@@ -1,17 +1,17 @@
 package TaskCli
 
 import (
-	"fmt"
-	"goChore/cli/UserCli"
-	"os"
-
 	"go.mongodb.org/mongo-driver/mongo"
+	"goChore/api/Tasks/handlerTasks"
+	"os"
 )
 
-func ListTask(user *mongo.Collection,task *mongo.Collection) {
+func ListTask(user *mongo.Collection, task *mongo.Collection) {
 	command := os.Args[1]
-	status := UserCli.LoggedIn
-	if command == "list" && status == 1 {
-		fmt.Println("Logging in user")
+	username := os.Args[2]
+	if command == "list" {
+		handlerTasks.ListTaskHandler(user, task, username)
+		return
 	}
+	return
 }
