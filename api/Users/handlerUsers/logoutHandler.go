@@ -31,7 +31,8 @@ func LogoutHandler(coll *mongo.Collection, username string, status int) {
 			fmt.Println("Logged out successfully")
 			user.LoggedIn = 0
 			return
-		} else {
+		} 
+		if user.LoggedIn == 0 {
 			fmt.Println("You are not logged in")
 			fmt.Println("Please login")
 			return
