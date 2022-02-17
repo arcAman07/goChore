@@ -16,5 +16,9 @@ func LoginUser(coll *mongo.Collection) (string, string, int) {
 		fmt.Println("Logging in user")
 		return username, password,LoggedIn
 	}
+	if command == "login" && LoggedIn == 1 {
+		fmt.Println("User is already logged in")
+		return "", "",2
+	}
 	return "", "",2
 }

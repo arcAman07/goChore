@@ -34,7 +34,7 @@ func LoginHandler(coll *mongo.Collection, username string, password string, stat
 			return
 		}
 		user.LoggedIn = LoggedIn
-		fmt.Println("Logging in user")
+		fmt.Println("Logged in successfully")
 	}
 	if err := cursor.Err(); err != nil {
 		fmt.Println(err)

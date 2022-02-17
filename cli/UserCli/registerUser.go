@@ -20,5 +20,8 @@ func RegisterUser(coll *mongo.Collection) (string, string, int) {
 		fmt.Println("Registering user")
 		return username, password,LoggedIn
 	}
+	if command == "register" && LoggedIn == 1 {
+		fmt.Println("User is already logged in")
+	}
 	return "", "",2
 }
