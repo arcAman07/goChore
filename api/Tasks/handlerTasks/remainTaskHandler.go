@@ -59,8 +59,8 @@ func RemainTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 				return
 			}
 		} else {
-			fmt.Println("You are not logged in")
-			fmt.Println("Please login")
+			fmt.Println("Please login first")
+			return
 		}
 		if err := cursor.Err(); err != nil {
 			fmt.Println(err)
