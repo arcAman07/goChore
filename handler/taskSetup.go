@@ -5,11 +5,11 @@ import (
 	"goChore/cli/TaskCli"
 )
 func TaskSetup(task *mongo.Collection) {
-	TaskCli.AddTask(task)
-	TaskCli.DeleteTask(task)
-	TaskCli.FinishTask(task)
-	TaskCli.RemainTask(task)
-	TaskCli.RefreshTask(task)
+	TaskCli.AddTask(user,task)
+	TaskCli.DeleteTask(user,task)
+	TaskCli.FinishTask(user,task)
+	TaskCli.RemainTask(user,task)
+	TaskCli.RefreshTask(user,task)
 	TaskCli.UpdateTask(task)
 	TaskCli.ListTask(task)
 }
