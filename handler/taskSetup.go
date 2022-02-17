@@ -3,6 +3,7 @@ package handler
 import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"goChore/cli/TaskCli"
+	"os"
 )
 
 func TaskSetup(user *mongo.Collection, task *mongo.Collection) {
@@ -13,4 +14,22 @@ func TaskSetup(user *mongo.Collection, task *mongo.Collection) {
 	TaskCli.RefreshTask(user, task)
 	TaskCli.UpdateTask(user, task)
 	TaskCli.ListTask(user, task)
+	if os.Args[1] == "add" {
+		UserCli.RegisterUser(user)
+	}
+	if os.Args[1] == "delete" {
+		UserCli.LoginUser(user)
+	}
+	if os.Args[1] == "finish" {
+		UserCli.LogoutUser(user)
+	}
+	if os.Args[1] == "remain" {
+		UserCli.RegisterUser(user)
+	}
+	if os.Args[1] == "update" {
+		UserCli.LoginUser(user)
+	}
+	if os.Args[1] == "list" {
+		UserCli.LogoutUser(user)
+	}
 }
