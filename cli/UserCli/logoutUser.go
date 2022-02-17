@@ -14,9 +14,8 @@ func LogoutUser(coll *mongo.Collection) {
 	command := os.Args[1]
 	username := os.Args[2]
 	if command == "logout" {
-		LoggedIn = 0
 		fmt.Println("Logging out user ...")
-		handlerUsers.LogoutHandler(coll, username,LoggedIn)
+		handlerUsers.LogoutHandler(coll, username)
 		return
 	}
 }

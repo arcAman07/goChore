@@ -8,9 +8,9 @@ import (
 	"goChore/models"
 )
 
-func LogoutHandler(coll *mongo.Collection, username string, status int) {
-	Username := username
-	_ = status
+func LogoutHandler(coll *mongo.Collection, username string) {
+	var Username string = username
+	fmt.Println(Username)
 	filter := bson.M{"Username": Username}
 	cursor, err := coll.Find(context.TODO(), filter)
 	if err != nil {
@@ -27,6 +27,7 @@ func LogoutHandler(coll *mongo.Collection, username string, status int) {
 			fmt.Println("Error in decoding user")
 			return
 		}
+		fmt.Println(user.LoggedIn)
 		if user.LoggedIn == 1 {
 			fmt.Println("Logged out successfully")
 			user.LoggedIn = 0
