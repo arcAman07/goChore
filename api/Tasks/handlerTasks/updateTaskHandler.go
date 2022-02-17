@@ -35,10 +35,10 @@ func UpdateTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 			_, err = task.UpdateOne(context.TODO(), Taskfilter, update)
 			if err != nil {
 				fmt.Println(err)
-				fmt.Println("Error in updating task status")
+				fmt.Println("Error in updating task name")
 				fmt.Println("Please check task name")
 			}
-			fmt.Println("Task status updated successfully")
+			fmt.Println("Task name updated successfully")
 		} else {
 			fmt.Println("Please login first")
 			return
