@@ -17,7 +17,7 @@ func RegisterUser(coll *mongo.Collection) (string, string, int) {
 	password := os.Args[3]
 	if command == "register" && LoggedIn == 0{
 		LoggedIn = 1
-		fmt.Println("Registering user")
+		fmt.Println("Registering user ...")
 		return username, password,LoggedIn
 	}
 	if command == "register" && LoggedIn == 1 {

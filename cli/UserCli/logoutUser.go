@@ -13,10 +13,15 @@ import (
 func LogoutUser(coll *mongo.Collection) (string,int) {
 	command := os.Args[1]
 	username := os.Args[2]
-	if command == "logout" {
+	if command == "logout" && LoggedIn == 1 {
 		LoggedIn = 0
-		fmt.Println("Logging out user")
+		fmt.Println("Logging out user ...")
 		return username,LoggedIn
+	}
+	if command == "logout" && LoggedIn == 0 {
+		fmt.Println("User is already logged out")
+		fmt.Println("Please login again")
+		return "",2
 	}
 	return "",2
 }
