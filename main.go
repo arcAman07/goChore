@@ -2,9 +2,6 @@ package main
 
 // Designing cli apps
 import (
-	// "goChore/api/Users"
-	// "goChore/api/Tasks"
-	// "goChore/config"
 	"go.mongodb.org/mongo-driver/mongo"
 	"goChore/config"
 	"goChore/handler"
