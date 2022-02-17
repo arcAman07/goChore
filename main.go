@@ -21,5 +21,5 @@ var TaskCollection *mongo.Collection
 func main() {
 	UserCollection, TaskCollection = config.Configure()
 	handler.UserSetup(UserCollection)
-	handler.TaskSetup(TaskCollection)
+	// handler.TaskSetup(TaskCollection)
 }
