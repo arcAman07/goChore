@@ -1,11 +1,14 @@
 package TaskCli
+
 import (
 	"fmt"
-	"os"
 	"goChore/cli/UserCli"
+	"os"
+
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func AddTask() (string) {
+func AddTask(task *mongo.Collection) (string) {
 	command := os.Args[1]
 	taskName := os.Args[2]
 	status := UserCli.LoggedIn
