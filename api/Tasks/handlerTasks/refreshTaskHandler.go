@@ -31,11 +31,11 @@ func RefreshTaskHandler(user *mongo.Collection, task *mongo.Collection, username
 			_, err = task.DeleteMany(context.TODO(), Taskfilter)
 			if err != nil {
 				fmt.Println(err)
-				fmt.Println("Error in deleting task")
-				fmt.Println("Please check task name")
+				fmt.Println("Error in deleting all tasks")
+				fmt.Println("Please try again")
 				return
 			}
-			fmt.Println("Task deleted successfully")
+			fmt.Println("All tasks deleted successfully")
 		} else {
 			fmt.Println("Please login first")
 			return
