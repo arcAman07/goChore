@@ -3,15 +3,16 @@ package handlerUsers
 import (
 	"context"
 	"fmt"
-	"goChore/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
+	"goChore/models"
 )
-func LogoutHandler(coll *mongo.Collection, username string,status int) {
+
+func LogoutHandler(coll *mongo.Collection, username string, status int) {
 	Username := username
-	LoggedIn := status
-	filter := bson.M{"Username":Username}
-	cursor,err := coll.Find(context.TODO(), filter)
+	_ = status
+	filter := bson.M{"Username": Username}
+	cursor, err := coll.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println("Please enter your valid username")
@@ -27,10 +28,13 @@ func LogoutHandler(coll *mongo.Collection, username string,status int) {
 			return
 		}
 		if user.LoggedIn == 1 {
-		user.LoggedIn = LoggedIn
-		fmt.Println("Logged out successfully")
+			fmt.Println("Logged out successfully")
+			user.LoggedIn = 0
+			return
 		} else {
-		fmt.Println("You are not logged in")
+			fmt.Println("You are not logged in")
+			fmt.Println("Please login")
+			return
 		}
 	}
 	if err := cursor.Err(); err != nil {
