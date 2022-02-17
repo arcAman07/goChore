@@ -26,3 +26,9 @@ func main() {
 // Better auth techniques to be added ( tokens ), CI-CD pipelines
 
 // better errer handling and use of go routines
+
+// Addition of assets ( beautiful CLI designs )
+
+// Sort of help command which will display all commands and their information
+
+// Adding environment variables with mongodb cluster and colors library in golang
