@@ -12,6 +12,7 @@ func LoginHandler(coll *mongo.Collection, username string, password string, stat
 	EnteredPassword := password
 	LoggedIn := status
 	filter := bson.M{"Username":Username}
+	update := bson.M{"$set": bson.M{"LoggedIn":1}}
 	cursor,err := coll.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println(err)
@@ -36,6 +37,13 @@ func LoginHandler(coll *mongo.Collection, username string, password string, stat
 			return
 		}
 		user.LoggedIn = LoggedIn
+		_ , err = coll.UpdateOne(context.TODO(), filter, update)
+		if err != nil {
+			fmt.Println(err)
+			fmt.Println("Error in logging in the user")
+			fmt.Println("Please try again")
+			return 
+		}
 		fmt.Println("Logged in successfully")
 	}
 	if err := cursor.Err(); err != nil {
