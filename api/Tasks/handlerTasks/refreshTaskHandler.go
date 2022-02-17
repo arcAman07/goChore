@@ -7,12 +7,11 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func RefreshTaskHandler(user *mongo.Collection, task *mongo.Collection, username string, taskName string) {
+func RefreshTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {
 	var Username string = username
-	var Task string = taskName
 	Userfilter := bson.M{"Username": Username}
 	cursor, err := user.Find(context.TODO(), Userfilter)
-	Taskfilter := bson.M{"TaskName": Task}
+	Taskfilter := bson.M{}
 	if err != nil {
 		fmt.Println("Username does not exist")
 		fmt.Println("Please register")
@@ -28,7 +27,7 @@ func RefreshTaskHandler(user *mongo.Collection, task *mongo.Collection, username
 			return
 		}
 		if user.LoggedIn == 1 {
-			fmt.Println("Deleting task ...")
+			fmt.Println("Deleting all tasks ...")
 			_, err = task.DeleteOne(context.TODO(), Taskfilter)
 			if err != nil {
 				fmt.Println(err)

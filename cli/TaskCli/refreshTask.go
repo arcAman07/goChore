@@ -9,9 +9,8 @@ import (
 func RefreshTask(user *mongo.Collection,task *mongo.Collection) {
 	command := os.Args[1]
 	userName := os.Args[2]
-	taskName := os.Args[3]
 	if command == "refresh" {
-		handlerTasks.RefreshTaskHandler(user,task,userName, taskName)
+		handlerTasks.RefreshTaskHandler(user,task,userName)
 		return
 	}
 	return 
