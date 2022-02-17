@@ -13,5 +13,4 @@ func FinishTask(user *mongo.Collection,task *mongo.Collection) {
 		handlerTasks.FinishTaskHandler(user,task,userName,taskName)
 		return
 	}
-	return 
 }
