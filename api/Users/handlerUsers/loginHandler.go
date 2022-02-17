@@ -4,13 +4,12 @@ import (
 	"fmt"
 	"goChore/models"
 	"go.mongodb.org/mongo-driver/mongo"
-	"golang.org/x/crypto/bcrypt"
 	"go.mongodb.org/mongo-driver/bson"
 )
 func LoginHandler(coll *mongo.Collection, username string, password string, status int) {
 	Username := username
 	EnteredPassword := password
-	LoggedIn := status
+	_ = status
 	filter := bson.M{"Username":Username}
 	update := bson.M{"$set": bson.M{"LoggedIn":1}}
 	cursor,err := coll.Find(context.TODO(), filter)
@@ -30,21 +29,22 @@ func LoginHandler(coll *mongo.Collection, username string, password string, stat
 			return
 		}
 		Password := user.Password
-		err = bcrypt.CompareHashAndPassword([]byte(Password), []byte(EnteredPassword))
-		if err != nil {
+		if Password == EnteredPassword {
+			fmt.Println("Logged in successfully")
+			user.LoggedIn = 1
+			_ , err := coll.UpdateOne(context.TODO(), filter, update)
+			if err != nil {
+				fmt.Println(err)
+				fmt.Println("Error in logging in the user")
+				fmt.Println("Please try again")
+				return
+			}
+		}
+		if Password != EnteredPassword {
 			fmt.Println("Incorrect password")
 			fmt.Println("Please try again")
 			return
 		}
-		user.LoggedIn = LoggedIn
-		_ , err = coll.UpdateOne(context.TODO(), filter, update)
-		if err != nil {
-			fmt.Println(err)
-			fmt.Println("Error in logging in the user")
-			fmt.Println("Please try again")
-			return 
-		}
-		fmt.Println("Logged in successfully")
 	}
 	if err := cursor.Err(); err != nil {
 		fmt.Println(err)
