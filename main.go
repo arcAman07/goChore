@@ -14,7 +14,7 @@ var TaskCollection *mongo.Collection
 func main() {
 	UserCollection, TaskCollection = config.Configure()
 	handler.UserSetup(UserCollection)
-	handler.TaskSetup(UserCollection,TaskCollection)
+	handler.TaskSetup(UserCollection, TaskCollection)
 }
 
 // func init will be used to populate some raw dummy data in the database
@@ -26,4 +26,3 @@ func main() {
 // Better auth techniques to be added ( tokens ), CI-CD pipelines
 
 // better errer handling and use of go routines
-
