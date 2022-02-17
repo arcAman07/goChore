@@ -10,6 +10,6 @@ func TaskSetup(task *mongo.Collection) {
 	TaskCli.FinishTask(user,task)
 	TaskCli.RemainTask(user,task)
 	TaskCli.RefreshTask(user,task)
-	TaskCli.UpdateTask(task)
-	TaskCli.ListTask(task)
+	TaskCli.UpdateTask(user,task)
+	TaskCli.ListTask(user,task)
 }
