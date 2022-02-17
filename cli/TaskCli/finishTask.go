@@ -10,7 +10,7 @@ func FinishTask(user *mongo.Collection,task *mongo.Collection) {
 	userName := os.Args[2]
 	taskName := os.Args[3]
 	if command == "finish" {
-		handlerTasks.RefreshTaskHandler(user,task,userName,taskName)
+		handlerTasks.FinishTaskHandler(user,task,userName,taskName)
 		return
 	}
 	return 
