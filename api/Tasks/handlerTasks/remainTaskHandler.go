@@ -1,4 +1,5 @@
 package handlerTasks
+
 import (
 	"context"
 	"fmt"
@@ -7,7 +8,8 @@ import (
 	"goChore/models"
 	// "image/color"
 )
-func RemainTaskHandler(user *mongo.Collection,task *mongo.Collection, username string) {
+
+func RemainTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {
 	var Username string = username
 	Userfilter := bson.M{"Username": Username}
 	Taskfilter := bson.M{"Status": 0}
@@ -60,5 +62,17 @@ func RemainTaskHandler(user *mongo.Collection,task *mongo.Collection, username s
 			fmt.Println("You are not logged in")
 			fmt.Println("Please login")
 		}
+		if err := cursor.Err(); err != nil {
+			fmt.Println(err)
+			fmt.Println("Error in cursor")
+			return
+		}
+		// Close the cursor once finished
+		if err := cursor.Close(context.TODO()); err != nil {
+			fmt.Println(err)
+			fmt.Println("Error in closing cursor")
+			return
+		}
+
 	}
 }
