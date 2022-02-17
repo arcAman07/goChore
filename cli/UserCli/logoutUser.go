@@ -5,13 +5,12 @@ import (
 	"os"
 )
 
-func LogoutUser() (string, string) {
+func LogoutUser() (int) {
 	command := os.Args[1]
-	username := os.Args[2]
-	password := os.Args[3]
 	if command == "logout" {
+		loggedIn = 0
 		fmt.Println("Logging out user")
-		return username, password
+		return loggedIn
 	}
-	return "", ""
+	return 2
 }
