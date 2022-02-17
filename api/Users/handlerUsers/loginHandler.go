@@ -44,6 +44,7 @@ func LoginHandler(coll *mongo.Collection, username string, password string, stat
 	// Close the cursor once finished
 	if err := cursor.Close(context.TODO()); err != nil {
 		fmt.Println(err)
+		fmt.Println("Error in closing cursor")
 		return
 	}
 
