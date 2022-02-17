@@ -14,5 +14,4 @@ func DeleteTask(user *mongo.Collection,task *mongo.Collection) {
 		handlerTasks.DeleteTaskHandler(user,task,userName, taskName)
 		return
 	}
-	return 
 }

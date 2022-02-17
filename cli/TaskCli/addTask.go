@@ -14,5 +14,4 @@ func AddTask(user *mongo.Collection,task *mongo.Collection) {
 		handlerTasks.AddTaskHandler(user,task,userName, taskName)
 		return
 	}
-	return 
 }
