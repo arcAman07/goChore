@@ -1,4 +1,4 @@
-package Users
+package initializeUsers
 import (
 	"fmt"
 	"go.mongodb.org/mongo-driver/bson"
