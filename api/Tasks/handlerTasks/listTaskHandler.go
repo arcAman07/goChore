@@ -6,7 +6,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"goChore/models"
-	"image/color"
+	// "image/color"
 )
 
 func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {
