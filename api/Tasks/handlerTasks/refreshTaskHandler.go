@@ -28,7 +28,7 @@ func RefreshTaskHandler(user *mongo.Collection, task *mongo.Collection, username
 		}
 		if user.LoggedIn == 1 {
 			fmt.Println("Deleting all tasks ...")
-			_, err = task.DeleteOne(context.TODO(), Taskfilter)
+			_, err = task.DeleteMany(context.TODO(), Taskfilter)
 			if err != nil {
 				fmt.Println(err)
 				fmt.Println("Error in deleting task")
