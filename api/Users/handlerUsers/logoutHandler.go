@@ -26,8 +26,12 @@ func LogoutHandler(coll *mongo.Collection, username string,status int) {
 			fmt.Println("Error in decoding user")
 			return
 		}
+		if user.LoggedIn == 1 {
 		user.LoggedIn = LoggedIn
 		fmt.Println("Logged out successfully")
+		} else {
+		fmt.Println("You are not logged in")
+		}
 	}
 	if err := cursor.Err(); err != nil {
 		fmt.Println(err)
