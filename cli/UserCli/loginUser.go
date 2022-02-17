@@ -9,9 +9,9 @@ func LoginUser() (string, string, int) {
 	username := os.Args[2]
 	password := os.Args[3]
 	if command == "login" {
-		loggedIn = 1
+		LoggedIn = 1
 		fmt.Println("Logging in user")
-		return username, password,loggedIn
+		return username, password,LoggedIn
 	}
 	return "", "",2
 }

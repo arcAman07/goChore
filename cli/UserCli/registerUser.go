@@ -6,16 +6,16 @@ import (
 ) 
 // 0 means used is logged out
 // 1 means the user is logged in
-var loggedIn int = 0
+var LoggedIn int = 0
 
 func RegisterUser() (string, string, int) {
 	command := os.Args[1]
 	username := os.Args[2]
 	password := os.Args[3]
 	if command == "register" {
-		loggedIn = 1
+		LoggedIn = 1
 		fmt.Println("Registering user")
-		return username, password,loggedIn
+		return username, password,LoggedIn
 	}
 	return "", "",2
 }
