@@ -14,6 +14,7 @@ func FinishTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 	Userfilter := bson.M{"Username": Username}
 	cursor, err := user.Find(context.TODO(), Userfilter)
 	Taskfilter := bson.M{"TaskName": Task}
+	update := bson.M{"$set": bson.M{"status": 1}}
 	if err != nil {
 		fmt.Println("Username does not exist")
 		fmt.Println("Please register")
@@ -29,15 +30,14 @@ func FinishTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 			return
 		}
 		if user.LoggedIn == 1 {
-			fmt.Println("Deleting task ...")
-			_, err = task.DeleteOne(context.TODO(), Taskfilter)
+			fmt.Println("Updating task status ...")
+			_, err = task.UpdateOne(context.TODO(), Taskfilter, update)
 			if err != nil {
 				fmt.Println(err)
-				fmt.Println("Error in deleting task")
+				fmt.Println("Error in updating task status")
 				fmt.Println("Please check task name")
-				return
 			}
-			fmt.Println("Task deleted successfully")
+			fmt.Println("Task status updated successfully")
 		} else {
 			fmt.Println("Please login first")
 			return
