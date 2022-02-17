@@ -1,10 +1,12 @@
 package Tasks
+
 import (
-	"fmt"
 	"context"
+	"fmt"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
+
 func Delete(coll *mongo.Collection) {
 	// Delete a single document
 	filter := bson.M{"TaskName": "Eating Food"}

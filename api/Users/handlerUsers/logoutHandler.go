@@ -11,7 +11,7 @@ import (
 func LogoutHandler(coll *mongo.Collection, username string) {
 	var Username string = username
 	filter := bson.M{"Username": Username}
-	update := bson.M{"$set": bson.M{"LoggedIn":0}}
+	update := bson.M{"$set": bson.M{"LoggedIn": 0}}
 	cursor, err := coll.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println(err)
@@ -30,15 +30,15 @@ func LogoutHandler(coll *mongo.Collection, username string) {
 		if user.LoggedIn == 1 {
 			fmt.Println("Logged out successfully")
 			user.LoggedIn = 0
-			_ , err := coll.UpdateOne(context.TODO(), filter, update)
+			_, err := coll.UpdateOne(context.TODO(), filter, update)
 			if err != nil {
 				fmt.Println(err)
 				fmt.Println("Error in logging out the user")
 				fmt.Println("Please try again")
-				return 
+				return
 			}
 			return
-		} 
+		}
 		if user.LoggedIn == 0 {
 			fmt.Println("You are not logged in")
 			fmt.Println("Please login")

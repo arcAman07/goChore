@@ -1,10 +1,12 @@
 package initializeUsers
+
 import (
-	"fmt"
 	"context"
+	"fmt"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
+
 func Delete(coll *mongo.Collection) {
 	// Delete a single document
 	filter := bson.M{"Username": "john05"}

@@ -1,11 +1,13 @@
 package initializeUsers
+
 import (
+	"context"
 	"fmt"
 	"go.mongodb.org/mongo-driver/bson"
-	"context"
 	"go.mongodb.org/mongo-driver/mongo"
 )
-func Update(coll *mongo.Collection){
+
+func Update(coll *mongo.Collection) {
 	// Update a single document
 	filter := bson.M{"Username": "arcAman07"}
 	update := bson.M{"$set": bson.M{"Username": "roasterAman07"}}

@@ -14,5 +14,4 @@ func RemainTask(user *mongo.Collection, task *mongo.Collection) {
 		return
 	}
 
-	
 }

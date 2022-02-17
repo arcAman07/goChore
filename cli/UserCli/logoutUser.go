@@ -2,9 +2,9 @@ package UserCli
 
 import (
 	"fmt"
-	"os"
-	"goChore/api/Users/handlerUsers"
 	"go.mongodb.org/mongo-driver/mongo"
+	"goChore/api/Users/handlerUsers"
+	"os"
 )
 
 // 0 means used is logged out

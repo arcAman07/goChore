@@ -1,11 +1,13 @@
 package Tasks
+
 import (
+	"context"
 	"fmt"
 	"go.mongodb.org/mongo-driver/bson"
-	"context"
 	"go.mongodb.org/mongo-driver/mongo"
 )
-func Update(coll *mongo.Collection){
+
+func Update(coll *mongo.Collection) {
 	// Update a single document
 	filter := bson.M{"TaskName": "code in golang"}
 	update := bson.M{"$set": bson.M{"status": true}}

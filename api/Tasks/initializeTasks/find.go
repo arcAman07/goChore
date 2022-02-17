@@ -1,11 +1,13 @@
 package Tasks
+
 import (
-	"fmt"
 	"context"
+	"fmt"
 	"go.mongodb.org/mongo-driver/bson"
-	"goChore/models"
 	"go.mongodb.org/mongo-driver/mongo"
+	"goChore/models"
 )
+
 func Find(coll *mongo.Collection) {
 	// Find all documents
 	cursor, err := coll.Find(context.TODO(), bson.M{})

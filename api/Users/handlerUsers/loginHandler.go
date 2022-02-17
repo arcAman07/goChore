@@ -1,18 +1,20 @@
 package handlerUsers
+
 import (
 	"context"
 	"fmt"
-	"goChore/models"
-	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/mongo"
+	"goChore/models"
 )
+
 func LoginHandler(coll *mongo.Collection, username string, password string, status int) {
 	Username := username
 	EnteredPassword := password
 	_ = status
-	filter := bson.M{"Username":Username}
-	update := bson.M{"$set": bson.M{"LoggedIn":1}}
-	cursor,err := coll.Find(context.TODO(), filter)
+	filter := bson.M{"Username": Username}
+	update := bson.M{"$set": bson.M{"LoggedIn": 1}}
+	cursor, err := coll.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println("Username does not exist")
@@ -32,7 +34,7 @@ func LoginHandler(coll *mongo.Collection, username string, password string, stat
 		if Password == EnteredPassword {
 			fmt.Println("Logged in successfully")
 			user.LoggedIn = 1
-			_ , err := coll.UpdateOne(context.TODO(), filter, update)
+			_, err := coll.UpdateOne(context.TODO(), filter, update)
 			if err != nil {
 				fmt.Println(err)
 				fmt.Println("Error in logging in the user")

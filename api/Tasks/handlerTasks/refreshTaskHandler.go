@@ -1,10 +1,11 @@
 package handlerTasks
+
 import (
 	"context"
 	"fmt"
-	"goChore/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
+	"goChore/models"
 )
 
 func RefreshTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {

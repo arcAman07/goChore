@@ -1,14 +1,16 @@
 package config
+
 import (
-	"fmt"
 	"context"
+	"fmt"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
+
 const uri = "mongodb://localhost:27017/taskDB"
 
-func Configure() (*mongo.Collection,*mongo.Collection) {
+func Configure() (*mongo.Collection, *mongo.Collection) {
 	// Create a new client and connect to the server
 	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI(uri))
 	if err != nil {
@@ -23,7 +25,6 @@ func Configure() (*mongo.Collection,*mongo.Collection) {
 	// 	}
 	// }()
 
-	
 	// Ping the primary
 	if err := client.Ping(context.TODO(), readpref.Primary()); err != nil {
 		panic(err)

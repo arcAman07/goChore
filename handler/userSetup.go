@@ -5,6 +5,7 @@ import (
 	"goChore/cli/UserCli"
 	"os"
 )
+
 func UserSetup(user *mongo.Collection) {
 	if os.Args[1] == "register" {
 		UserCli.RegisterUser(user)

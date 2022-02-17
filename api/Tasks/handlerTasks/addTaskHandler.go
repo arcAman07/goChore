@@ -8,10 +8,11 @@ import (
 	"goChore/models"
 	"time"
 )
+
 var currentTime time.Time = time.Now()
 var currentDay string = currentTime.Format("01-02-2006")
 
-func AddTaskHandler(user *mongo.Collection,task *mongo.Collection, username string, taskName string) {
+func AddTaskHandler(user *mongo.Collection, task *mongo.Collection, username string, taskName string) {
 	var Username string = username
 	var Task string = taskName
 	filter := bson.M{"Username": Username}
@@ -34,8 +35,8 @@ func AddTaskHandler(user *mongo.Collection,task *mongo.Collection, username stri
 			fmt.Println("Adding task ...")
 			enterTask := models.Task{
 				TaskName: Task,
-				Date: currentDay,
-				Status: 0,
+				Date:     currentDay,
+				Status:   0,
 				UserName: Username,
 			}
 			_, err = task.InsertOne(context.TODO(), enterTask)
