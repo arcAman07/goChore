@@ -1,11 +1,13 @@
 package TaskCli
+
 import (
 	"fmt"
-	"os"
 	"goChore/cli/UserCli"
+	"os"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func UpdateTask() (string, string) {
+func UpdateTask(task *mongo.Collection) (string, string) {
 	command := os.Args[1]
 	currentTask := os.Args[2]
 	newTask := os.Args[3]
