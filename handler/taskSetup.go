@@ -4,7 +4,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"goChore/cli/TaskCli"
 )
-func TaskSetup(task *mongo.Collection) {
+func TaskSetup(user *mongo.Collection,task *mongo.Collection) {
 	TaskCli.AddTask(user,task)
 	TaskCli.DeleteTask(user,task)
 	TaskCli.FinishTask(user,task)
