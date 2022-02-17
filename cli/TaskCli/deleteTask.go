@@ -1,11 +1,9 @@
 package TaskCli
 
 import (
-	"fmt"
-	"goChore/cli/UserCli"
 	"os"
-
 	"go.mongodb.org/mongo-driver/mongo"
+	"goChore/api/Tasks/handlerTasks"
 )
 
 func DeleteTask(user *mongo.Collection,task *mongo.Collection) {
@@ -13,7 +11,7 @@ func DeleteTask(user *mongo.Collection,task *mongo.Collection) {
 	userName := os.Args[2]
 	taskName := os.Args[3]
 	if command == "delete" {
-		handlerTasks.AddTaskHandler(user,task,userName, taskName)
+		handlerTasks.DeleteTaskHandler(user,task,userName, taskName)
 		return
 	}
 	return 
