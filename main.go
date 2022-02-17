@@ -9,6 +9,7 @@ import (
 
 var UserCollection *mongo.Collection
 var TaskCollection *mongo.Collection
+
 // func init() {
 // 	UserCollection,TaskCollection = config.Configure()
 // 	Users.Insert(UserCollection)
