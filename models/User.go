@@ -5,8 +5,8 @@ package models
 // 0 -> loggedOut, 1 -> loggedIn
 
 type User struct {
-	Username string `json:"username,omitempty" bson:"username,omitempty"`
-	Password string `json:"password,omitempty" bson:"password,omitempty"`
-	HashedPassword string `json:"hashed_password,omitempty" bson:"hashed_password,omitempty"`
-	LoggedIn int `json:"logged_in,omitempty" bson:"logged_in,omitempty"`
+	Username string `json:"Username,omitempty" bson:"Username,omitempty"`
+	Password string `json:"Password,omitempty" bson:"Password,omitempty"`
+	HashedPassword string `json:"HashedPassword,omitempty" bson:"HashedPassword,omitempty"`
+	LoggedIn int `json:"LoggedIn,omitempty" bson:"LoggedIn,omitempty"`
 }

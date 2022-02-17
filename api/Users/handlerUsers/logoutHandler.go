@@ -10,7 +10,6 @@ import (
 
 func LogoutHandler(coll *mongo.Collection, username string) {
 	var Username string = username
-	fmt.Println(Username)
 	filter := bson.M{"Username": Username}
 	cursor, err := coll.Find(context.TODO(), filter)
 	if err != nil {
