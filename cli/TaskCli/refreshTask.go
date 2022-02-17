@@ -1,11 +1,14 @@
 package TaskCli
+
 import (
 	"fmt"
-	"os"
 	"goChore/cli/UserCli"
+	"os"
+
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func RefreshTask() {
+func RefreshTask(task *mongo.Collection) {
 	command := os.Args[1]
 	status := UserCli.LoggedIn
 	if command == "refresh" && status == 1 {
