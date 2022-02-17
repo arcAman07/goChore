@@ -49,3 +49,26 @@ func Insert(coll *mongo.Collection) {
 	fmt.Printf("Number of documents inserted: %d\n", len(result.InsertedIDs))
 
 }
+
+func AddUser(username string,password string,status int) (int) {
+	// Insert a single document
+	hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	if err != nil {
+		fmt.Println(err)
+		return 2
+	}
+	p1 := models.User{
+		Username: username,
+		Password: password,
+		HashedPassword:(string)(hash),
+	}
+	// Insert multiple documents
+	multiUsers := []interface{}{p1}
+	result, err := coll.InsertMany(context.TODO(), multiUsers)
+	if err != nil {
+		fmt.Println(err)
+		return 2
+	}
+	fmt.Printf("Number of documents inserted: %d\n", len(result.InsertedIDs))
+	return 1
+}
