@@ -6,13 +6,16 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"goChore/models"
+	"time"
 )
+var currentTime time.Time = time.Now()
+var currentDay string = currentTime.Format("01-02-2006")
 
-func AddTaskHandler(coll *mongo.Collection, username string, task string) {
+func AddTaskHandler(user *mongo.Collection,task *mongo.Collection, username string, taskName string) {
 	var Username string = username
-	var Task string = task
+	var Task string = taskName
 	filter := bson.M{"Username": Username}
-	cursor, err := coll.Find(context.TODO(), filter)
+	cursor, err := user.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println("Username does not exist")
 		fmt.Println("Please register")
@@ -29,6 +32,12 @@ func AddTaskHandler(coll *mongo.Collection, username string, task string) {
 		}
 		if user.LoggedIn == 1 {
 			fmt.Println("Adding task ...")
+			task := models.Task{
+				TaskName: Task,
+				Date: currentDay,
+				Status: 0,
+				UserName: Username,
+			}
 		}
 		if err := cursor.Err(); err != nil {
 			fmt.Println(err)
