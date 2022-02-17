@@ -7,6 +7,9 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
+// 0 means used is logged out
+// 1 means the user is logged in
+
 func LogoutUser(coll *mongo.Collection) (string,int) {
 	command := os.Args[1]
 	username := os.Args[2]
