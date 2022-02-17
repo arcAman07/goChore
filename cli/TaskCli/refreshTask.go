@@ -13,5 +13,4 @@ func RefreshTask(user *mongo.Collection,task *mongo.Collection) {
 		handlerTasks.RefreshTaskHandler(user,task,userName)
 		return
 	}
-	return 
 }

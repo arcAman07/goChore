@@ -16,5 +16,4 @@ func UpdateTask(user *mongo.Collection,task *mongo.Collection) {
 		handlerTasks.UpdateTaskHandler(user,task,userName,currentTask,newTask)
 		return
 	}
-	return
 }

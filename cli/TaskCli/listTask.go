@@ -13,5 +13,4 @@ func ListTask(user *mongo.Collection, task *mongo.Collection) {
 		handlerTasks.ListTaskHandler(user, task, username)
 		return
 	}
-	return
 }

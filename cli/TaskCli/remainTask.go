@@ -6,10 +6,13 @@ import (
 	"os"
 )
 
-func ListTask(user *mongo.Collection,task *mongo.Collection) {
+func RemainTask(user *mongo.Collection, task *mongo.Collection) {
 	command := os.Args[1]
 	username := os.Args[2]
-	if command == "login"{
-		
+	if command == "remain" {
+		handlerTasks.RemainTaskHandler(user, task, username)
+		return
 	}
+
+	
 }
