@@ -56,12 +56,14 @@ func RegisterHandler(coll *mongo.Collection, username string, password string, s
 			CorrectPassword := user.Password
 			err = bcrypt.CompareHashAndPassword([]byte(CorrectPassword), []byte(Password))
 			if err != nil {
+				// Check if the username already exists
 				fmt.Println("Username already in database")
 				checkUsername = 1
 				registeredUser = 0
 				fmt.Println("Please choose a different username")
 				return
 			} else {
+				// Check if the user already exists in the database
 				checkUsername = 1
 				registeredUser = 1
 				fmt.Println("User already in database")
