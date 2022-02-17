@@ -8,7 +8,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func ListTask(task *mongo.Collection) {
+func ListTask(user *mongo.Collection,task *mongo.Collection) {
 	command := os.Args[1]
 	status := UserCli.LoggedIn
 	if command == "list" && status == 1 {
