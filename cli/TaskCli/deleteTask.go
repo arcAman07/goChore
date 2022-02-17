@@ -8,14 +8,13 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func DeleteTask(task *mongo.Collection) (string) {
+func DeleteTask(user *mongo.Collection,task *mongo.Collection) {
 	command := os.Args[1]
-	taskName := os.Args[2]
-	status := UserCli.LoggedIn
-	if command == "delete" && status == 1 {
-		fmt.Println("Deleting task")
-		return taskName
+	userName := os.Args[2]
+	taskName := os.Args[3]
+	if command == "delete" {
+		handlerTasks.AddTaskHandler(user,task,userName, taskName)
+		return
 	}
-	fmt.Println("Not logged in")
-	return ""
+	return 
 }
