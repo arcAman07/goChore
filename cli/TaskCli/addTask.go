@@ -8,13 +8,12 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func AddTask(task *mongo.Collection) (string) {
+func AddTask(task *mongo.Collection) {
 	command := os.Args[1]
 	taskName := os.Args[2]
 	if command == "add" {
-		fmt.Println("Adding task")
-		return taskName
+		fmt.Println("Adding task ...")
+		return
 	}
-	fmt.Println("Not logged in")
-	return ""
+	return 
 }
