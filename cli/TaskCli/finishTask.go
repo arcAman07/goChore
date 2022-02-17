@@ -2,6 +2,7 @@ package TaskCli
 import (
 	"fmt"
 	"os"
+	"goChore/cli/UserCli"
 )
 
 func FinishTask() (string, string) {
