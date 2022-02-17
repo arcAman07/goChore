@@ -1,21 +1,17 @@
 package TaskCli
 
 import (
-	"fmt"
-	"goChore/cli/UserCli"
 	"os"
-
 	"go.mongodb.org/mongo-driver/mongo"
+	"goChore/api/Tasks/handlerTasks"
 )
-
-func FinishTask(task *mongo.Collection) (string) {
+func FinishTask(user *mongo.Collection,task *mongo.Collection) {
 	command := os.Args[1]
-	taskName := os.Args[2]
-	status := UserCli.LoggedIn
-	if command == "finish" && status == 1 {
-		fmt.Println("Finishing task")
-		return taskName
+	userName := os.Args[2]
+	taskName := os.Args[3]
+	if command == "finish" {
+		handlerTasks.RefreshTaskHandler(user,task,userName,taskName)
+		return
 	}
-	fmt.Println("Not logged in")
-	return ""
+	return 
 }
