@@ -7,4 +7,6 @@ import (
 	"goChore/models"
 	// "image/color"
 )
-func RemainTaskHandler()
+func RemainTaskHandler(user *mongo.Collection,task *mongo.Collection, username string) {
+	var Username string = username
+}
