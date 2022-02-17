@@ -24,6 +24,9 @@ func RegisterHandler(coll *mongo.Collection,username string, password string, st
 		HashedPassword: (string)(hashedPassword),
 		LoggedIn:LoggedIn,
 	}
+	if len(password) < 8 {
+		fmt.Println("Password must be atleast 8 characters long")
+	}
 	_ , err = coll.InsertOne(context.TODO(), user)
 	if err != nil {
 		fmt.Println(err)
