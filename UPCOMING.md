@@ -5,16 +5,16 @@
 4) Adding errors to return rather than int
 5) func init will be used to populate some raw dummy data in the database
 
-Have to be implemented
+6)Have to be implemented
 
-Write test code for testing the functions, and implement logger
+7)Write test code for testing the functions, and implement logger
 
-Better auth techniques to be added ( tokens ), CI-CD pipelines
+8)Better auth techniques to be added ( tokens ), CI-CD pipelines
 
-better errer handling and use of go routines
+9)better errer handling and use of go routines
 
-Addition of assets ( beautiful CLI designs )
+10)Addition of assets ( beautiful CLI designs )
 
-Sort of help command which will display all commands and their information
+11)Sort of help command which will display all commands and their information
 
-Adding environment variables with mongodb cluster and colors library in golang
+12)Adding environment variables with mongodb cluster and colors library in golang
