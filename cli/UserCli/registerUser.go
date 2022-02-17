@@ -3,7 +3,9 @@ package UserCli
 import (
 	"fmt"
 	"os"
-)
+) 
+// 0 means used is logged out
+var loggedIn int = 0
 
 func RegisterUser() (string, string) {
 	command := os.Args[1]
