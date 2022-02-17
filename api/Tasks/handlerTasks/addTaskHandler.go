@@ -32,12 +32,22 @@ func AddTaskHandler(user *mongo.Collection,task *mongo.Collection, username stri
 		}
 		if user.LoggedIn == 1 {
 			fmt.Println("Adding task ...")
-			task := models.Task{
+			enterTask := models.Task{
 				TaskName: Task,
 				Date: currentDay,
 				Status: 0,
 				UserName: Username,
 			}
+			_, err = task.InsertOne(context.TODO(), enterTask)
+			if err != nil {
+				fmt.Println(err)
+				fmt.Println("Error in inserting task")
+				return
+			}
+			fmt.Println("Task added successfully")
+		} else {
+			fmt.Println("Please login first")
+			return
 		}
 		if err := cursor.Err(); err != nil {
 			fmt.Println(err)
