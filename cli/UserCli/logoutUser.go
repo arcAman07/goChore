@@ -7,12 +7,13 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func LogoutUser(coll *mongo.Collection) (int) {
+func LogoutUser(coll *mongo.Collection) (string,int) {
 	command := os.Args[1]
+	username := os.Args[2]
 	if command == "logout" {
 		LoggedIn = 0
 		fmt.Println("Logging out user")
-		return LoggedIn
+		return username,LoggedIn
 	}
-	return 2
+	return "",2
 }
