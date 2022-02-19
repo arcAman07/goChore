@@ -5,6 +5,19 @@ import (
 	"github.com/fatih/color"
 )
 
+// Commands => 
+
+// 1) register "Username" "Password"
+// 2) login "Username" "Password"
+// 3) add "Username" "TaskName"
+// 4) delete "Username" "TaskName"
+// 5) list "Username"
+// 6) finish "Username" "TaskName"
+// 7) remain "Username"
+// 8) update "Username" "TaskName" "NewTaskName"
+// 7) logout "Username"
+// 8) exit
+
 var i int = 1
 func GeneralHelp() {
 	color.Red("I am a god")
