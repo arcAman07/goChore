@@ -15,11 +15,18 @@ var currentDay string = currentTime.Format("01-02-2006")
 func AddTaskHandler(user *mongo.Collection, task *mongo.Collection, userName string, taskName string) {
 	var Username string = userName
 	var Task string = taskName
-	filter := bson.M{"Username": Username}
+	filter := bson.M{"Username":Username}
 	cursor, err := user.Find(context.TODO(), filter)
+	anotherFilter := bson.D{{"Username", Username}}
 	if err != nil {
 		fmt.Println("Username does not exist")
 		fmt.Println("Please register")
+		return
+	}
+	err = user.FindOne(context.TODO(), anotherFilter).Decode(&user)
+	if err != nil {
+		fmt.Println(err)
+		fmt.Println("Error in decoding user")
 		return
 	}
 	// Iterate through the cursor
@@ -36,7 +43,7 @@ func AddTaskHandler(user *mongo.Collection, task *mongo.Collection, userName str
 			enterTask := models.Task{
 				TaskName: Task,
 				Date:     currentDay,
-				Status:   0,
+				Status:   "Not Done",
 				UserName: Username,
 			}
 			_, err = task.InsertOne(context.TODO(), enterTask)
