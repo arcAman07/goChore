@@ -14,7 +14,7 @@ var i int = 1
 func RemainTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {
 	var Username string = username
 	Userfilter := bson.M{"Username": Username}
-	Taskfilter := bson.M{"Status": 0}
+	Taskfilter := bson.M{"Status": "Not Done"}
 	cursor, err := user.Find(context.TODO(), Userfilter)
 	if err != nil {
 		fmt.Println("Username does not exist")
