@@ -19,7 +19,6 @@ import (
 // 10) stats "Username" => "Total Tasks" "Total Tasks Done" "Total Tasks Not Done" =>
 // 11) undo "Username" "TaskName" => Change its status
 // 12) logout "Username" =>
-// 13) exit =>
 // Adding Point system + leaderboard later if traffic increases
 
 var i int = 1
