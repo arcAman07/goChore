@@ -11,7 +11,7 @@ import (
 func FinishTaskHandler(user *mongo.Collection, task *mongo.Collection, username string, taskName string) {
 	var Username string = username
 	var Task string = taskName
-	Userfilter := bson.M{"Username": Username}
+	Userfilter := bson.M{"UserName": Username}
 	cursor, err := user.Find(context.TODO(), Userfilter)
 	Taskfilter := bson.M{"TaskName": Task}
 	update := bson.M{"$set": bson.M{"status": 1}}
