@@ -10,7 +10,7 @@ import (
 
 func RefreshTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {
 	var Username string = username
-	Userfilter := bson.M{"Username": Username}
+	Userfilter := bson.M{"UserName": Username}
 	cursor, err := user.Find(context.TODO(), Userfilter)
 	Taskfilter := bson.M{}
 	if err != nil {
