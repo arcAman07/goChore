@@ -8,6 +8,19 @@ import (
 	"goChore/models"
 	// "image/color"
 )
+type Gray16 struct {
+	Y uint16
+}
+type Alpha16 struct {
+	A uint16
+}
+
+var (
+	Black       = Gray16{0}
+	White       = Gray16{0xffff}
+	Transparent = Alpha16{0}
+	Opaque      = Alpha16{0xffff}
+)
 
 func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {
 	var Username string = username
@@ -45,7 +58,7 @@ func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 					fmt.Println("Error in decoding task")
 					return
 				}
-				fmt.Printf("%+v\n", task)
+				fmt.Printf("%+v\n", task.TaskName)
 			}
 			if err := cursor.Err(); err != nil {
 				fmt.Println(err)
