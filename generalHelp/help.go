@@ -3,6 +3,6 @@ import (
 	"fmt"
 )
 
-func generalHelp() {
+func GeneralHelp() {
 	fmt.Println("Hello, playground")
 }
