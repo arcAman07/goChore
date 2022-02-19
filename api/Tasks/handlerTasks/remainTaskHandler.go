@@ -6,6 +6,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"goChore/models"
+	"github.com/fatih/color"
 )
 
 var i int = 1
@@ -46,7 +47,7 @@ func RemainTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 					fmt.Println("Error in decoding task")
 					return
 				}
-				fmt.Printf("%d\t%+v\n",i,task.TaskName)
+				color.Red("%d\t%+v\n",i,task.TaskName)
 				i++
 			}
 			if err := cursor.Err(); err != nil {
