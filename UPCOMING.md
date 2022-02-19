@@ -10,7 +10,7 @@
 
 7)Better auth techniques to be added ( tokens ), CI-CD pipelines
 
-9)better errer handling and use of go routines
+8)better errer handling and use of go routines
 
 10)Addition of assets ( beautiful CLI designs )
 
