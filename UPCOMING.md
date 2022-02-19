@@ -2,7 +2,7 @@
 1) Oauth with tokens
 2) Assets and UI elements to make CLI attractive
 3) Adding errors to return rather than int
-5) func init will be used to populate some raw dummy data in the database
+4) func init will be used to populate some raw dummy data in the database
 
 6)Have to be implemented
 
