@@ -9,21 +9,6 @@ import (
 	"github.com/fatih/color"
 )
 
-
-type Gray16 struct {
-	Y uint16
-}
-type Alpha16 struct {
-	A uint16
-}
-
-var (
-	Black       = Gray16{0}
-	White       = Gray16{0xffff}
-	Transparent = Alpha16{0}
-	Opaque      = Alpha16{0xffff}
-)
-
 // Red Color denotes the task is "Not Done"
 
 // Green Color denotes the task is "Done"
