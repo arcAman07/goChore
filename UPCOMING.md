@@ -4,7 +4,7 @@
 3) Adding errors to return rather than int
 4) func init will be used to populate some raw dummy data in the database
 
-6)Have to be implemented
+5)Have to be implemented
 
 7)Write test code for testing the functions, and implement logger
 
