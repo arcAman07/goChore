@@ -26,6 +26,7 @@ func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 	var Username string = username
 	Userfilter := bson.M{"Username": Username}
 	Taskfilter := bson.M{}
+	var i int = 1
 	cursor, err := user.Find(context.TODO(), Userfilter)
 	if err != nil {
 		fmt.Println("Username does not exist")
@@ -58,7 +59,8 @@ func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 					fmt.Println("Error in decoding task")
 					return
 				}
-				fmt.Printf("%+v\n", task.TaskName)
+				fmt.Printf("%d\t%+v\n",i, task.TaskName)
+				i++
 			}
 			if err := cursor.Err(); err != nil {
 				fmt.Println(err)
