@@ -6,7 +6,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"goChore/models"
-	// "image/color"
 )
 
 var i int = 1
