@@ -87,7 +87,7 @@ func StatsTaskHandler(user *mongo.Collection, task *mongo.Collection, username s
 		var ratio float64 = (float64(total)/float64(doneTasks))*100
 		color.Blue("Percentage of done tasks to all tasks is %f", ratio)
 
-		// Add other stats also if needed be
+		// Add other stats also if needed be( comments based on ratio )
 
 	}
 }
