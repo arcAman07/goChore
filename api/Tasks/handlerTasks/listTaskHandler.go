@@ -6,7 +6,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"goChore/models"
-	// "image/color"
+	"github.com/fatih/color"
 )
 type Gray16 struct {
 	Y uint16
@@ -59,8 +59,14 @@ func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 					fmt.Println("Error in decoding task")
 					return
 				}
-				fmt.Printf("%d\t%+v\n",i, task.TaskName)
-				i++
+				if task.Status == "Not Done" {
+					fmt.Printf("%d\t%+v\n",i,task.TaskName)
+					i++
+				}
+				if task.Status == "Done" {
+					fmt.Printf("%d\t%+v\n",i,task.TaskName)
+					i++
+				}
 			}
 			if err := cursor.Err(); err != nil {
 				fmt.Println(err)
