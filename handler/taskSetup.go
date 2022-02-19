@@ -28,4 +28,10 @@ func TaskSetup(user *mongo.Collection, task *mongo.Collection) {
 	if os.Args[1] == "refresh" {
 		TaskCli.RefreshTask(user, task)
 	}
+	if os.Args[1] == "stats" {
+		TaskCli.StatsTask(user, task)
+	}
+	if os.Args[1] == "undo" {
+		TaskCli.UndoTask(user, task)
+	}
 }
