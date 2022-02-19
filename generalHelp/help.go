@@ -18,8 +18,8 @@ import (
 // 9) refresh "Username"
 // 10) stats "Username" => "Total Tasks" "Total Tasks Done" "Total Tasks Not Done"
 // 11) undo "Username" "TaskName" => Change its status
-// 10) logout "Username"
-// 11) exit
+// 12) logout "Username"
+// 13) exit
 
 var i int = 1
 func GeneralHelp() {
