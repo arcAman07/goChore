@@ -16,8 +16,8 @@ import (
 // 7) remain "Username"
 // 8) update "Username" "TaskName" "NewTaskName"
 // 9) refresh "Username"
-// 9) logout "Username"
-// 10) exit
+// 10) logout "Username"
+// 11) exit
 
 var i int = 1
 func GeneralHelp() {
