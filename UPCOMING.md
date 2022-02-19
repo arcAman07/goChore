@@ -1,11 +1,11 @@
 // More Features to be added
-2) Assets and UI elements to make CLI attractive
-3) Adding errors to return rather than int
-4) func init will be used to populate some raw dummy data in the database
+1) Assets and UI elements to make CLI attractive
+2) Adding errors to return rather than int
+3) func init will be used to populate some raw dummy data in the database
 
-5)Have to be implemented
+4)Have to be implemented
 
-6)Write test code for testing the functions, and implement logger
+5)Write test code for testing the functions, and implement logger
 
 7)Better auth techniques to be added ( tokens ), CI-CD pipelines
 
