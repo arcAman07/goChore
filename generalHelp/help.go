@@ -10,16 +10,16 @@ import (
 // 1) register "Username" "Password" => 
 // 2) login "Username" "Password" =>
 // 3) add "Username" "TaskName" =>
-// 4) delete "Username" "TaskName"
-// 5) list "Username"
-// 6) finish "Username" "TaskName"
-// 7) remain "Username"
-// 8) update "Username" "TaskName" "NewTaskName"
-// 9) refresh "Username"
-// 10) stats "Username" => "Total Tasks" "Total Tasks Done" "Total Tasks Not Done"
+// 4) delete "Username" "TaskName" =>
+// 5) list "Username" =>
+// 6) finish "Username" "TaskName" =>
+// 7) remain "Username" =>
+// 8) update "Username" "TaskName" "NewTaskName" =>
+// 9) refresh "Username" =>
+// 10) stats "Username" => "Total Tasks" "Total Tasks Done" "Total Tasks Not Done" =>
 // 11) undo "Username" "TaskName" => Change its status
-// 12) logout "Username"
-// 13) exit
+// 12) logout "Username" =>
+// 13) exit =>
 // Adding Point system + leaderboard later if traffic increases
 
 var i int = 1
