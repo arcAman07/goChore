@@ -7,9 +7,9 @@ import (
 
 // Commands => 
 
-// 1) register "Username" "Password"
-// 2) login "Username" "Password"
-// 3) add "Username" "TaskName"
+// 1) register "Username" "Password" => 
+// 2) login "Username" "Password" =>
+// 3) add "Username" "TaskName" =>
 // 4) delete "Username" "TaskName"
 // 5) list "Username"
 // 6) finish "Username" "TaskName"
