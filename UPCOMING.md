@@ -6,7 +6,7 @@
 
 5)Have to be implemented
 
-7)Write test code for testing the functions, and implement logger
+6)Write test code for testing the functions, and implement logger
 
 8)Better auth techniques to be added ( tokens ), CI-CD pipelines
 
