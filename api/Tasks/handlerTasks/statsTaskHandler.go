@@ -3,9 +3,11 @@ package handlerTasks
 import (
 	"context"
 	"fmt"
+	"goChore/models"
+
+	"github.com/fatih/color"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
-	"goChore/models"
 )
 
 func StatsTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {
@@ -79,6 +81,13 @@ func StatsTaskHandler(user *mongo.Collection, task *mongo.Collection, username s
 			fmt.Println("Error in closing cursor")
 			return
 		}
+		color.Green("Done tasks for the day is %d", doneTasks)
+		color.Red("Pending tasks for the day is %d", pendingTasks)
+		var total int = doneTasks + pendingTasks
+		var ratio float64 = (float64(total)/float64(doneTasks))*100
+		color.Blue("Percentage of done tasks to all tasks is %f", ratio)
+
+		// Add other stats also if needed be
 
 	}
 }
