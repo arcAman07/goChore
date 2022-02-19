@@ -9,6 +9,8 @@ import (
 	// "image/color"
 )
 
+var i int = 1
+
 func RemainTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {
 	var Username string = username
 	Userfilter := bson.M{"Username": Username}
@@ -45,7 +47,8 @@ func RemainTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 					fmt.Println("Error in decoding task")
 					return
 				}
-				fmt.Printf("%+v\n", task)
+				fmt.Printf("%d\t%+v\n",i,task.TaskName)
+				i++
 			}
 			if err := cursor.Err(); err != nil {
 				fmt.Println(err)
