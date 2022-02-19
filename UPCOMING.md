@@ -12,7 +12,7 @@
 
 8)better errer handling and use of go routines
 
-10)Addition of assets ( beautiful CLI designs )
+9)Addition of assets ( beautiful CLI designs )
 
 11)Sort of help command which will display all commands and their information
 
