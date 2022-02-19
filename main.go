@@ -15,10 +15,11 @@ func init() {
 	UserCollection, TaskCollection = config.Configure()
 	handler.UserSetup(UserCollection)
 	handler.TaskSetup(UserCollection, TaskCollection)
+	handler.Helper()
 }
 
 func main() {
-	
+
 }
 
 // func init will be used to populate some raw dummy data in the database
