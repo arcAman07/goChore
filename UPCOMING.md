@@ -7,7 +7,7 @@
 
 5)Write test code for testing the functions, and implement logger
 
-7)Better auth techniques to be added ( tokens ), CI-CD pipelines
+6)Better auth techniques to be added ( tokens ), CI-CD pipelines
 
 8)better errer handling and use of go routines
 
