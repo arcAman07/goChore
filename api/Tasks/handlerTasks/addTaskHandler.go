@@ -15,7 +15,7 @@ var currentDay string = currentTime.Format("01-02-2006")
 func AddTaskHandler(user *mongo.Collection, task *mongo.Collection, userName string, taskName string) {
 	var Username string = userName
 	var Task string = taskName
-	filter := bson.M{"UserName": Username}
+	filter := bson.M{"Username": Username}
 	cursor, err := user.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println("Username does not exist")

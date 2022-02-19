@@ -20,7 +20,6 @@ func UpdateTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 	if err != nil {
 		fmt.Println("Username does not exist")
 		fmt.Println("Please register")
-		return
 	}
 	// Iterate through the cursor
 	for cursor.Next(context.TODO()) {

@@ -11,7 +11,7 @@ import (
 func DeleteTaskHandler(user *mongo.Collection, task *mongo.Collection, username string, taskName string) {
 	var Username string = username
 	var Task string = taskName
-	Userfilter := bson.M{"UserName": Username}
+	Userfilter := bson.M{"Username": Username}
 	cursor, err := user.Find(context.TODO(), Userfilter)
 	Taskfilter := bson.M{"TaskName": Task}
 	if err != nil {
