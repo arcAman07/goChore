@@ -8,6 +8,8 @@ import (
 	"goChore/models"
 	"github.com/fatih/color"
 )
+
+
 type Gray16 struct {
 	Y uint16
 }
@@ -21,6 +23,10 @@ var (
 	Transparent = Alpha16{0}
 	Opaque      = Alpha16{0xffff}
 )
+
+// Red Color denotes the task is "Not Done"
+
+// Green Color denotes the task is "Done"
 
 func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {
 	var Username string = username
@@ -60,11 +66,11 @@ func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 					return
 				}
 				if task.Status == "Not Done" {
-					fmt.Printf("%d\t%+v\n",i,task.TaskName)
+					color.Red("%d\t%+v\n",i,task.TaskName)
 					i++
 				}
 				if task.Status == "Done" {
-					fmt.Printf("%d\t%+v\n",i,task.TaskName)
+					color.Green("%d\t%+v\n",i,task.TaskName)
 					i++
 				}
 			}
