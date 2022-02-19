@@ -12,10 +12,10 @@ import (
 var currentTime time.Time = time.Now()
 var currentDay string = currentTime.Format("01-02-2006")
 
-func AddTaskHandler(user *mongo.Collection, task *mongo.Collection, username string, taskName string) {
-	var Username string = username
+func AddTaskHandler(user *mongo.Collection, task *mongo.Collection, userName string, taskName string) {
+	var Username string = userName
 	var Task string = taskName
-	filter := bson.M{"Username": Username}
+	filter := bson.M{"UserName": Username}
 	cursor, err := user.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println("Username does not exist")
