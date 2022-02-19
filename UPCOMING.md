@@ -17,3 +17,5 @@
 11)Sort of help command which will display all commands and their information
 
 12)Adding environment variables with mongodb cluster and colors library in golang
+
+13) better docs
