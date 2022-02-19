@@ -1,7 +1,8 @@
+package generalHelp
 import (
 	"fmt"
 )
 
-func main() {
+func generalHelp() {
 	fmt.Println("Hello, playground")
 }
