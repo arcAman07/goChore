@@ -14,7 +14,7 @@
 
 9)Addition of assets ( beautiful CLI designs )
 
-11)Sort of help command which will display all commands and their information
+10)Sort of help command which will display all commands and their information
 
 12)Adding environment variables with mongodb cluster and colors library in golang
 
