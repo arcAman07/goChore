@@ -11,7 +11,7 @@ import (
 
 func RemainTaskHandler(user *mongo.Collection, task *mongo.Collection, username string) {
 	var Username string = username
-	Userfilter := bson.M{"Username": Username}
+	Userfilter := bson.M{"UserName": Username}
 	Taskfilter := bson.M{"Status": 0}
 	cursor, err := user.Find(context.TODO(), Userfilter)
 	if err != nil {
