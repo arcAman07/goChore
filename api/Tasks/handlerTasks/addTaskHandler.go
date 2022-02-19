@@ -53,7 +53,8 @@ func AddTaskHandler(user *mongo.Collection, task *mongo.Collection, userName str
 				return
 			}
 			fmt.Println("Task added successfully")
-		} else {
+		} 
+		if user.LoggedIn == 0 {
 			fmt.Println("Please login first")
 			return
 		}
