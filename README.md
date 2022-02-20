@@ -6,5 +6,5 @@ Features :
 4) AI enabled tasks
 5) 5) Make undo,update and delete task more secure ( error handling for tasks that dont exist )
 6) ALMOST READY FOR PRODUCTION
-7) DOCS TO BE MADE BY THIS WEEK WITH ASSETS
+7) DOCS TO BE MADE BY THIS WEEK WITH ASSETS ( PICS )
 8) CHECK FOR REFERENCES
