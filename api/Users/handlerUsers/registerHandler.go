@@ -59,8 +59,8 @@ func RegisterHandler(coll *mongo.Collection, username string, password string) {
 				registeredUser = 0
 				fmt.Println("Please choose a different username")
 				return
-			} 
-			if CorrectPassword == Password{
+			}
+			if CorrectPassword == Password {
 				// Check if the user already exists in the database
 				checkUsername = 1
 				registeredUser = 1

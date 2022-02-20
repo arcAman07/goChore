@@ -15,7 +15,7 @@ var currentDay string = currentTime.Format("01-02-2006")
 func AddTaskHandler(user *mongo.Collection, task *mongo.Collection, userName string, taskName string) {
 	var username string = userName
 	var Task string = taskName
-	filter := bson.M{"Username":username}
+	filter := bson.M{"Username": username}
 	cursor, err := user.Find(context.TODO(), filter)
 	anotherFilter := bson.D{{"Username", username}}
 	if err != nil {
@@ -53,7 +53,7 @@ func AddTaskHandler(user *mongo.Collection, task *mongo.Collection, userName str
 				return
 			}
 			fmt.Println("Task added successfully")
-		} 
+		}
 		if user.LoggedIn == "0" {
 			fmt.Println("Please login first")
 			return

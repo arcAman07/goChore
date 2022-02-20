@@ -37,7 +37,7 @@ func RefreshTaskHandler(user *mongo.Collection, task *mongo.Collection, username
 				return
 			}
 			fmt.Println("All tasks deleted successfully")
-		} 
+		}
 		if user.LoggedIn == "0" {
 			fmt.Println("Please login first")
 			return

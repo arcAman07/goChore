@@ -39,7 +39,7 @@ func UndoTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 				return
 			}
 			fmt.Println("Task undone successfully")
-		} 
+		}
 		if user.LoggedIn == "0" {
 			fmt.Println("Please login first")
 			return

@@ -3,10 +3,10 @@ package handlerTasks
 import (
 	"context"
 	"fmt"
+	"github.com/fatih/color"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"goChore/models"
-	"github.com/fatih/color"
 )
 
 // Red Color denotes the task is "Not Done"
@@ -51,11 +51,11 @@ func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 					return
 				}
 				if task.Status == "Not Done" {
-					color.Red("%d\t%+v\n",i,task.TaskName)
+					color.Red("%d\t%+v\n", i, task.TaskName)
 					i++
 				}
 				if task.Status == "Done" {
-					color.Green("%d\t%+v\n",i,task.TaskName)
+					color.Green("%d\t%+v\n", i, task.TaskName)
 					i++
 				}
 			}
@@ -70,7 +70,7 @@ func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 				fmt.Println("Error in closing cursor")
 				return
 			}
-		} 
+		}
 		if user.LoggedIn == "0" {
 			fmt.Println("Please login first")
 			return

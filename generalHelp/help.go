@@ -1,13 +1,14 @@
 package generalHelp
+
 import (
 	"fmt"
-	"os"
 	"github.com/fatih/color"
+	"os"
 )
 
-// Commands => 
+// Commands =>
 
-// 1) register "Username" "Password" => 
+// 1) register "Username" "Password" =>
 // 2) login "Username" "Password" =>
 // 3) add "Username" "TaskName" =>
 // 4) delete "Username" "TaskName" =>
@@ -24,52 +25,53 @@ import (
 var i int = 1
 var whilte = color.New(color.FgWhite)
 var boldWhite = whilte.Add(color.Bold)
+
 func GeneralHelp() {
 	color.Red("I am a god")
 	command := os.Args[1]
 	if command == "help" {
 		boldWhite.Println("Commands:")
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"register \"Username\" \"Password\"\t=>\tRegisters a new user")
+		fmt.Printf("%d\t%+v\n", i, "register \"Username\" \"Password\"\t=>\tRegisters a new user")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"login \"Username\" \"Password\"\t=>\tLogs in the registered user")
+		fmt.Printf("%d\t%+v\n", i, "login \"Username\" \"Password\"\t=>\tLogs in the registered user")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"logout \"Username\"\t=>\t\tLogs out the registered user")
+		fmt.Printf("%d\t%+v\n", i, "logout \"Username\"\t=>\t\tLogs out the registered user")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"add \"Username\" \"TaskName\"\t=>\tAdds a new task to the registered user")
+		fmt.Printf("%d\t%+v\n", i, "add \"Username\" \"TaskName\"\t=>\tAdds a new task to the registered user")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"delete \"Username\" \"TaskName\"\t=>\tDeletes a task from the registered user")
+		fmt.Printf("%d\t%+v\n", i, "delete \"Username\" \"TaskName\"\t=>\tDeletes a task from the registered user")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"list \"Username\"\t=>\t\tLists all the tasks of the registered user")
+		fmt.Printf("%d\t%+v\n", i, "list \"Username\"\t=>\t\tLists all the tasks of the registered user")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"finish \"Username\" \"TaskName\"\t=>\tMarks a task as done")
+		fmt.Printf("%d\t%+v\n", i, "finish \"Username\" \"TaskName\"\t=>\tMarks a task as done")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"remain \"Username\"\t=>\t\tLists all the tasks that are not done")
+		fmt.Printf("%d\t%+v\n", i, "remain \"Username\"\t=>\t\tLists all the tasks that are not done")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"update \"Username\" \"TaskName\" \"NewTaskName\"\t=>\tUpdates a task")
+		fmt.Printf("%d\t%+v\n", i, "update \"Username\" \"TaskName\" \"NewTaskName\"\t=>\tUpdates a task")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"refresh \"Username\"\t=>\t\tClears the list of all tasks")
+		fmt.Printf("%d\t%+v\n", i, "refresh \"Username\"\t=>\t\tClears the list of all tasks")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"stats \"Username\"\t=>\t\tLists the stats of the registered user")
+		fmt.Printf("%d\t%+v\n", i, "stats \"Username\"\t=>\t\tLists the stats of the registered user")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"undo \"Username\" \"TaskName\"\t=>\tUndoes a task")
+		fmt.Printf("%d\t%+v\n", i, "undo \"Username\" \"TaskName\"\t=>\tUndoes a task")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"help\t=>\tDisplays the list of available commands")
+		fmt.Printf("%d\t%+v\n", i, "help\t=>\tDisplays the list of available commands")
 		i++
 		fmt.Println()
-		fmt.Printf("%d\t%+v\n",i,"exit\t=>\tTerminates the CLI application")
+		fmt.Printf("%d\t%+v\n", i, "exit\t=>\tTerminates the CLI application")
 		i++
 		fmt.Println()
 		return

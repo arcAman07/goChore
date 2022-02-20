@@ -12,7 +12,7 @@ func LoginHandler(coll *mongo.Collection, username string, password string) {
 	Username := username
 	EnteredPassword := password
 	filter := bson.M{"Username": Username}
-	update := bson.M{"$set": bson.M{"LoggedIn": 1}}
+	update := bson.M{"$set": bson.M{"LoggedIn": "1"}}
 	cursor, err := coll.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println(err)
@@ -32,13 +32,19 @@ func LoginHandler(coll *mongo.Collection, username string, password string) {
 		Password := user.Password
 		if Password == EnteredPassword {
 			fmt.Println("Logged in successfully")
-			user.LoggedIn = 1
-			_, err := coll.UpdateOne(context.TODO(), filter, update)
-			if err != nil {
-				fmt.Println(err)
-				fmt.Println("Error in logging in the user")
-				fmt.Println("Please try again")
+			if user.LoggedIn == "1" {
+				fmt.Println("You are already logged in")
 				return
+			}
+			if user.LoggedIn == "0" {
+				user.LoggedIn = "1"
+				_, err := coll.UpdateOne(context.TODO(), filter, update)
+				if err != nil {
+					fmt.Println(err)
+					fmt.Println("Error in logging in the user")
+					fmt.Println("Please try again")
+					return
+				}
 			}
 		}
 		if Password != EnteredPassword {
