@@ -9,10 +9,10 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-func RegisterHandler(coll *mongo.Collection, username string, password string, loggedIn int) {
+func RegisterHandler(coll *mongo.Collection, username string, password string, status int) {
 	Username := username
 	Password := password
-	var LoggedIn int = loggedIn
+	LoggedIn := status
 	// Check if the username already exists, if it does we prompt them to change it
 	// 0 -> username does not exists, 1 -> username already exists
 
