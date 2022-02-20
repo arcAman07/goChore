@@ -48,6 +48,7 @@ func RemainTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 					return
 				}
 				color.Red("%d\t%+v\n", i, task.TaskName)
+				fmt.Println()
 				i++
 			}
 			if err := cursor.Err(); err != nil {
