@@ -8,10 +8,9 @@ import (
 	"goChore/models"
 )
 
-func LoginHandler(coll *mongo.Collection, username string, password string, status int) {
+func LoginHandler(coll *mongo.Collection, username string, password string) {
 	Username := username
 	EnteredPassword := password
-	_ = status
 	filter := bson.M{"Username": Username}
 	update := bson.M{"$set": bson.M{"LoggedIn": 1}}
 	cursor, err := coll.Find(context.TODO(), filter)
