@@ -31,7 +31,7 @@ func StatsTaskHandler(user *mongo.Collection, task *mongo.Collection, username s
 			fmt.Println("Error in decoding user")
 			return
 		}
-		if user.LoggedIn == 1 {
+		if user.LoggedIn == "1" {
 			fmt.Println("Updating task status ...")
 			cursor, err = task.Find(context.TODO(), Taskfilter)
 			if err != nil {
@@ -66,7 +66,7 @@ func StatsTaskHandler(user *mongo.Collection, task *mongo.Collection, username s
 				return
 			}
 		}
-		if user.LoggedIn == 0 {
+		if user.LoggedIn == "0" {
 			fmt.Println("Please login first")
 			return
 		}
