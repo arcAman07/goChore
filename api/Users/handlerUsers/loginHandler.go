@@ -8,14 +8,19 @@ import (
 	"goChore/models"
 )
 
-func LoginHandler(coll *mongo.Collection, username string, password string) {
+func LoginHandler(User *mongo.Collection, username string, password string) {
 	Username := username
 	EnteredPassword := password
 	filter := bson.M{"Username": Username}
 	update := bson.M{"$set": bson.M{"LoggedIn": "1"}}
-	cursor, err := coll.Find(context.TODO(), filter)
+	anotherFilter := bson.D{{"Username", username}}
+	cursor, err := User.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println(err)
+		return
+	}
+	err = User.FindOne(context.TODO(), anotherFilter).Decode(&User)
+	if err != nil {
 		fmt.Println("Username does not exist")
 		fmt.Println("Please register")
 		return
@@ -38,7 +43,7 @@ func LoginHandler(coll *mongo.Collection, username string, password string) {
 			}
 			if user.LoggedIn == "0" {
 				user.LoggedIn = "1"
-				_, err := coll.UpdateOne(context.TODO(), filter, update)
+				_, err := User.UpdateOne(context.TODO(), filter, update)
 				if err != nil {
 					fmt.Println(err)
 					fmt.Println("Error in logging in the user")
