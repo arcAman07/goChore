@@ -22,7 +22,7 @@ func RegisterUser(coll *mongo.Collection) {
 	}
 	if command == "register" && LoggedIn == 0 {
 		fmt.Println("Registering user ...")
-		handlerUsers.RegisterHandler(coll, username, password, LoggedIn)
+		handlerUsers.RegisterHandler(coll, username, password)
 		return
 	}
 }
