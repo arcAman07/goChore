@@ -27,7 +27,7 @@ func RefreshTaskHandler(user *mongo.Collection, task *mongo.Collection, username
 			fmt.Println("Error in decoding user")
 			return
 		}
-		if user.LoggedIn == 1 {
+		if user.LoggedIn == "1" {
 			fmt.Println("Deleting all tasks ...")
 			_, err = task.DeleteMany(context.TODO(), Taskfilter)
 			if err != nil {
@@ -37,7 +37,8 @@ func RefreshTaskHandler(user *mongo.Collection, task *mongo.Collection, username
 				return
 			}
 			fmt.Println("All tasks deleted successfully")
-		} else {
+		} 
+		if user.LoggedIn == "0" {
 			fmt.Println("Please login first")
 			return
 		}
