@@ -38,7 +38,8 @@ func DeleteTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 				return
 			}
 			fmt.Println("Task deleted successfully")
-		} else {
+		} 
+		if user.LoggedIn == "0" {
 			fmt.Println("Please login first")
 			return
 		}
