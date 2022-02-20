@@ -33,7 +33,7 @@ func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 			fmt.Println("Error in decoding user")
 			return
 		}
-		if user.LoggedIn == 1 {
+		if user.LoggedIn == "1" {
 			fmt.Println("Listing tasks ...")
 			cursor, err = task.Find(context.TODO(), Taskfilter)
 			if err != nil {
@@ -70,7 +70,8 @@ func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 				fmt.Println("Error in closing cursor")
 				return
 			}
-		} else {
+		} 
+		if user.LoggedIn == "0" {
 			fmt.Println("Please login first")
 			return
 		}
