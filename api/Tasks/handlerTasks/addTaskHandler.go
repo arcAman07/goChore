@@ -38,7 +38,7 @@ func AddTaskHandler(user *mongo.Collection, task *mongo.Collection, userName str
 			fmt.Println("Error in decoding user")
 			return
 		}
-		if user.LoggedIn == 1 {
+		if user.LoggedIn == "1" {
 			fmt.Println("Adding task ...")
 			enterTask := models.Task{
 				TaskName: Task,
