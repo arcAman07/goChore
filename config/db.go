@@ -10,7 +10,6 @@ import (
 	"time"
 )
 
-// const uri = "mongodb://localhost:27017/taskDB"
 
 func Configure() (*mongo.Collection, *mongo.Collection) {
 	// Create a new client and connect to the server
