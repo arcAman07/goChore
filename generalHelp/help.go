@@ -29,6 +29,7 @@ func GeneralHelp() {
 	command := os.Args[1]
 	if command == "help" {
 		boldWhite.Println("Commands:")
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"register \"Username\" \"Password\"\t=>\tRegisters a new user")
 		i++
 		fmt.Println()
