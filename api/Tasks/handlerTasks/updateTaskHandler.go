@@ -30,7 +30,7 @@ func UpdateTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 			fmt.Println("Error in decoding user")
 			return
 		}
-		if user.LoggedIn == 1 {
+		if user.LoggedIn == "1" {
 			fmt.Println("Updating task name ...")
 			_, err = task.UpdateOne(context.TODO(), Taskfilter, update)
 			if err != nil {
@@ -39,7 +39,8 @@ func UpdateTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 				fmt.Println("Please check task name")
 			}
 			fmt.Println("Task name updated successfully")
-		} else {
+		} 
+		if user.LoggedIn == "0" {
 			fmt.Println("Please login first")
 			return
 		}

@@ -29,7 +29,7 @@ func UndoTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 			fmt.Println("Error in decoding user")
 			return
 		}
-		if user.LoggedIn == 1 {
+		if user.LoggedIn == "1" {
 			fmt.Println("Undoing task status ...")
 			_, err = task.UpdateOne(context.TODO(), Taskfilter, update)
 			if err != nil {
@@ -40,7 +40,7 @@ func UndoTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 			}
 			fmt.Println("Task undone successfully")
 		} 
-		if user.LoggedIn == 0 {
+		if user.LoggedIn == "0" {
 			fmt.Println("Please login first")
 			return
 		}
