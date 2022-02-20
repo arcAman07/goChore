@@ -87,7 +87,7 @@ func RegisterHandler(coll *mongo.Collection, username string, password string) {
 			Username:       Username,
 			Password:       Password,
 			HashedPassword: (string)(hashedPassword),
-			LoggedIn:       LoggedIn,
+			LoggedIn:       "0",
 		}
 		_, err = coll.InsertOne(context.TODO(), user)
 		if err != nil {
