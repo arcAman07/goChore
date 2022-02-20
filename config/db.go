@@ -22,7 +22,6 @@ func Configure() (*mongo.Collection, *mongo.Collection) {
 		log.Fatal("Error loading .env file")
 	}
 	uri := os.Getenv("MONGO_URI")
-	fmt.Println(uri)
 
 	serverAPIOptions := options.ServerAPI(options.ServerAPIVersion1)
 
