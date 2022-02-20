@@ -28,7 +28,7 @@ func DeleteTaskHandler(user *mongo.Collection, task *mongo.Collection, username 
 			fmt.Println("Error in decoding user")
 			return
 		}
-		if user.LoggedIn == 1 {
+		if user.LoggedIn == "1" {
 			fmt.Println("Deleting task ...")
 			_, err = task.DeleteOne(context.TODO(), Taskfilter)
 			if err != nil {
