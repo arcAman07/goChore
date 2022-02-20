@@ -82,10 +82,13 @@ func StatsTaskHandler(user *mongo.Collection, task *mongo.Collection, username s
 			return
 		}
 		color.Green("Done tasks for the day is %d", doneTasks)
+		fmt.Println()
 		color.Red("Pending tasks for the day is %d", pendingTasks)
+		fmt.Println()
 		var total int = doneTasks + pendingTasks
-		var ratio float64 = (float64(total) / float64(doneTasks)) * 100
+		var ratio float64 = (float64(doneTasks) / float64(total)) * 100
 		color.Blue("Percentage of done tasks to all tasks is %f", ratio)
+		fmt.Println()
 		if ratio > 75 {
 			color.Green("You are doing very well. Keep it up")
 
