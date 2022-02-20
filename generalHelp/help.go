@@ -27,5 +27,33 @@ func GeneralHelp() {
 	command := os.Args[1]
 	if command == "help" {
 		fmt.Printf("%d\t%+v\n",i,"help")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"register")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"login")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"add")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"delete")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"list")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"finish")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"remain")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"update")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"refresh")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"stats")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"undo")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"logout")
+		i++
+		fmt.Printf("%d\t%+v\n",i,"exit")
+		i++
+		return
 	}
 }
