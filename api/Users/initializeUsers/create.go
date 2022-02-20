@@ -23,7 +23,7 @@ func Insert(coll *mongo.Collection) {
 		Username:       "arcAman07",
 		Password:       "12345",
 		HashedPassword: (string)(hash),
-		LoggedIn:       0,
+		LoggedIn:       "0",
 	}
 	hash, err = bcrypt.GenerateFromPassword([]byte("1234567"), bcrypt.DefaultCost)
 	if err != nil {
@@ -34,7 +34,7 @@ func Insert(coll *mongo.Collection) {
 		Username:       "john05",
 		Password:       "123456",
 		HashedPassword: (string)(hash),
-		LoggedIn:       1,
+		LoggedIn:       "1",
 	}
 	hash, err = bcrypt.GenerateFromPassword([]byte("1234567"), bcrypt.DefaultCost)
 	if err != nil {
@@ -45,7 +45,7 @@ func Insert(coll *mongo.Collection) {
 		Username:       "janeb4",
 		Password:       "1234567",
 		HashedPassword: (string)(hash),
-		LoggedIn:       1,
+		LoggedIn:       "1",
 	}
 	// Insert multiple documents
 	multiUsers := []interface{}{p1, p2, p3}
