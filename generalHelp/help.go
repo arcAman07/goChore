@@ -22,15 +22,18 @@ import (
 // Adding Point system + leaderboard later if traffic increases
 
 var i int = 1
+var whilte = color.New(color.FgWhite)
+var boldWhite = whilte.Add(color.Bold)
 func GeneralHelp() {
 	color.Red("I am a god")
 	command := os.Args[1]
 	if command == "help" {
-		fmt.Printf("%d\t%+v\n",i,"help")
+		boldWhite.Println("Commands:")
+		fmt.Printf("%d  %+v\n",i,"")
 		i++
-		fmt.Printf("%d\t%+v\n",i,"register")
+		fmt.Printf("%d  %+v\n",i,"register")
 		i++
-		fmt.Printf("%d\t%+v\n",i,"login")
+		fmt.Printf("%d  \t%+v\n",i,"login")
 		i++
 		fmt.Printf("%d\t%+v\n",i,"add")
 		i++
