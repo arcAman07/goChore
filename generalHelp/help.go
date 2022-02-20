@@ -29,34 +29,48 @@ func GeneralHelp() {
 	command := os.Args[1]
 	if command == "help" {
 		boldWhite.Println("Commands:")
-		fmt.Printf("%d\t%+v\n",i,"register \"Username\" \"Password\"=>\tRegisters a new user")
+		fmt.Printf("%d\t%+v\n",i,"register \"Username\" \"Password\"\t=>\tRegisters a new user")
 		i++
-		fmt.Printf("%d\t%+v\n",i,"login \"Username\" \"Password\"=>\tLogs in the registered user")
+		fmt.Println()
+		fmt.Printf("%d\t%+v\n",i,"login \"Username\" \"Password\"\t=>\tLogs in the registered user")
 		i++
-		fmt.Printf("%d\t%+v\n",i,"logout \"Username\"=>\t\tLogs out the registered user")
+		fmt.Println()
+		fmt.Printf("%d\t%+v\n",i,"logout \"Username\"\t=>\t\tLogs out the registered user")
 		i++
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"add \"Username\" \"TaskName\"=>\tAdds a new task to the registered user")
 		i++
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"delete \"Username\" \"TaskName\"=>\tDeletes a task from the registered user")
 		i++
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"list \"Username\"=>\t\tLists all the tasks of the registered user")
 		i++
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"finish \"Username\" \"TaskName\"=>\tMarks a task as done")
 		i++
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"remain \"Username\"=>\t\tLists all the tasks that are not done")
 		i++
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"update \"Username\" \"TaskName\" \"NewTaskName\"=>\tUpdates a task")
 		i++
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"refresh \"Username\"=>\t\tClears the list of all tasks")
 		i++
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"stats \"Username\"=>\t\tLists the stats of the registered user")
 		i++
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"undo \"Username\" \"TaskName\"=>\tUndoes a task")
 		i++
+		fmt.Println()
 		fmt.Printf("%d\t%+v\n",i,"help =>\tDisplays the list of available commands")
 		i++
-		fmt.Printf("%d\t%+v\n",i,"exit")
+		fmt.Println()
+		fmt.Printf("%d\t%+v\n",i,"exit\t=>\tTerminates the CLI application")
 		i++
+		fmt.Println()
 		return
 	}
 }
