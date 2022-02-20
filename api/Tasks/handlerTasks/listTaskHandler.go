@@ -52,10 +52,12 @@ func ListTaskHandler(user *mongo.Collection, task *mongo.Collection, username st
 				}
 				if task.Status == "Not Done" {
 					color.Red("%d\t%+v\n", i, task.TaskName)
+					fmt.Println()
 					i++
 				}
 				if task.Status == "Done" {
 					color.Green("%d\t%+v\n", i, task.TaskName)
+					fmt.Println()
 					i++
 				}
 			}
